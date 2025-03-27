@@ -10,13 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
-
-    /*
-    SDFASD
-    ADSFAA
-    AFSDVA
-    FDASDF
-     */
     public static final Scanner S = new Scanner(System.in);
 
     public static void main(String[] args) {
