@@ -4,6 +4,7 @@ import comunications.EnvioMail;
 import comunications.EnvioTelegram;
 import data.DataProductos;
 import models.*;
+import persistencia.Persistencia;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Controlador {
     private void mock() {
         admins.add(new Admin(generaIdAdmin(), "admin", "admin", "admin@admin"));
         catalogo = DataProductos.getProductosMock();
+        Persistencia.guardaProductos();
     }
 
     // Mock que va a decidir el usuario si iniciarlo o no
