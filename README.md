@@ -11,7 +11,9 @@ Práctica Obligatoria Tema 6 by Ahmed Lhaouchi Briki y Marcos Lara Cano
 - [Ejecución del programa](#Ejecución)
 
   ## Presentación
-Blablabla
+
+Esta es la practica obligatoria del tema 5 de programación, que consiste en un programa llamado fernanshop, una tienda virtual.
+
   ## Instalación
 
 Para poder ejecutar el programa, debemos instalar el **JDK 23**. [Haz clic aquí para descargarlo directamente en tu ordenador](https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.exe) El programa comenzará a descargarse automáticamente y deberá ejecutar el instalador.
