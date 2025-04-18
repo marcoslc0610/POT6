@@ -1,9 +1,10 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements Serializable {
 
     //Atributos
     private int id;

@@ -1,6 +1,8 @@
 package models;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
 
     //Atributos
     private int id;
@@ -65,4 +67,13 @@ public class Admin {
         return (email.equalsIgnoreCase(this.email) && clave.equals(this.clave));
     }
 
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", clave='" + clave + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

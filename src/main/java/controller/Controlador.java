@@ -5,11 +5,13 @@ import comunications.EnvioTelegram;
 import data.DataProductos;
 import models.*;
 import persistencia.Persistencia;
+import utils.Utils;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Controlador {
+public class Controlador implements Serializable {
 
     //Atributos
     private ArrayList<Cliente> clientes;
@@ -19,30 +21,32 @@ public class Controlador {
 
     //Constructor
     public Controlador() {
-        clientes = new ArrayList<>();
-        trabajadores = new ArrayList<>();
-        admins = new ArrayList<>();
-        catalogo = new ArrayList<>();
-        mock();
-        mock();
+        clientes = Persistencia.leeClientes();
+        trabajadores = Persistencia.leeTrabajadores();
+        admins = Persistencia.leeAdmin();
+        catalogo = Persistencia.leeProductos();
     }
 
-    // Mock que va a tener un admin y el catálogo
-    private void mock() {
-        admins.add(new Admin(generaIdAdmin(), "admin", "admin", "admin@admin"));
+    public void iniciaDatosCliente() {
+        clientes.add(new Cliente(generaIdCliente(), "ahmedlb26205@gmail.com", "123", "Ahmed", "Torredelcampo", "Jaén", "Federico Garcia Lorca", 631788372));
+        clientes.add(new Cliente(generaIdCliente(), "marcos.lara.0610@fernando3martos.com", "123", "Marcos", "Martos", "Jaén", "Calle Ramon Garay", 672929324));
+        Utils.mensajeGuardadoPersistencia(Persistencia.guardaClientesPersistencia(clientes));
+    }
+
+    public void iniciaDatosTrabajadores() {
+        trabajadores.add(new Trabajador(generaIdTrabajador(), "Carlos", "123", "ahmed.lhaouchi.2602@fernando3martos.com", 672839234));
+        trabajadores.add(new Trabajador(generaIdTrabajador(), "Juan", "123", "marcoscano2005@gmail.com", 672812344));
+        Utils.mensajeGuardadoPersistencia(Persistencia.guardaTrabajadoresPersistencia(trabajadores));
+    }
+
+    public void iniciaDatosAdmin() {
+        admins.add(new Admin(generaIdAdmin(), "admin", "admin", "admin@admin.com"));
+        Utils.mensajeGuardadoPersistencia(Persistencia.guardaAdminsPersistencia(admins));
+    }
+
+    public void iniciaDatosCatalogo() {
         catalogo = DataProductos.getProductosMock();
-        Persistencia.guardaProductos();
-    }
-
-    // Mock que va a decidir el usuario si iniciarlo o no
-    public void mock(boolean iniciaMockTeclado) {
-        if (iniciaMockTeclado) {
-            clientes.add(new Cliente(generaIdCliente(), "ahmedlb26205@gmail.com", "123", "Ahmed", "Torredelcampo", "Jaén", "Federico Garcia Lorca", 631788372));
-            clientes.add(new Cliente(generaIdCliente(), "marcos.lara.0610@fernando3martos.com", "123", "Marcos", "Martos", "Jaén", "Calle Ramon Garay", 672929324));
-            trabajadores.add(new Trabajador(generaIdTrabajador(), "Carlos", "123", "ahmed.lhaouchi.2602@fernando3martos.com", 672839234));
-            trabajadores.add(new Trabajador(generaIdTrabajador(), "Juan", "123", "marcoscano2005@gmail.com", 672812344));
-
-        }
+        Utils.mensajeGuardadoPersistencia(Persistencia.guardaProductosPersistencia(catalogo));
     }
 
 
@@ -84,22 +88,41 @@ public class Controlador {
     //Metodo para el login que devuelve el tipo de objeto
     public Object login(String email, String clave) {
         for (Cliente c : clientes) {
-            if (c.login(email, clave)) return c;
+            if (c.login(email, clave)) {
+                Persistencia.inicioSesionLog(c);
+                return c;
+            }
         }
         for (Trabajador t : trabajadores) {
-            if (t.login(email, clave)) return t;
+            if (t.login(email, clave)) {
+                Persistencia.inicioSesionLog(t);
+                return t;
+            }
         }
         for (Admin a : admins) {
-            if (a.login(email, clave)) return a;
+            if (a.login(email, clave)) {
+                Persistencia.inicioSesionLog(a);
+                return a;
+            }
         }
         return null;
+    }
+
+    // Metodo que para guardar el último cierre de sesion de un usuario
+    public void guardaCierreSesion(Object user) {
+        Persistencia.guardaCierreSesion(user);
+    }
+
+    // Metodo que muestra el ultimo inicio de sesion del usuario
+    public String getUltimoInicioSesion(int idUsuario) {
+        return Persistencia.ultimoInicioSesion(idUsuario);
     }
 
     //Metodo que agrega un producto al carro de un cliente que le pasamos
     public boolean addProductoCarrito(Cliente cliente, int idProducto) {
         Producto producto = buscaProductoById(idProducto);
         if (producto == null) return false;
-        cliente.getCarro().add(new Producto(producto));
+        cliente.getCarro().add(producto); //ARREGLADO
         return true;
     }
 
@@ -160,6 +183,12 @@ public class Controlador {
         return candidato;
     }
 
+    // Metodo que te comprueba si tienes
+    public boolean accesoInvitado() {
+        return Persistencia.getAccesoInvitados();
+    }
+
+
     //Metodo que nos indica si hay algún trabajador empatado en cuanto a pedidos pendientes con el trabajador que le pasamos
     public boolean hayEmpateTrabajadoresCandidatos(Trabajador candidato) {
         for (Trabajador t : trabajadores) {
@@ -188,7 +217,11 @@ public class Controlador {
 
     //Metodo que agrega un cliente al sistema (ArrayList) (metodo inventado por Ahmed)
     public boolean agregaClienteSistema(Cliente c) {
-        return clientes.add(c);
+        if (clientes.add(c)) {
+            Persistencia.guardaClientesPersistencia(clientes);
+            return true;
+        }
+        return false;
     }
 
     //Metodo que busca en el catálogo productos que tengan coincidencia en el nombre de la marca
@@ -553,5 +586,31 @@ public class Controlador {
         if (pedidoTemp == null) return false;
 
         return pedidoTemp.cambiaEstado(4);
+    }
+
+    public boolean guardaClientes() {
+        return Persistencia.guardaClientesPersistencia(clientes);
+    }
+
+    public boolean guardaTrabajadores() {
+        return Persistencia.guardaTrabajadoresPersistencia(trabajadores);
+    }
+
+    public boolean guardaAdmin() {
+        return Persistencia.guardaAdminsPersistencia(admins);
+    }
+
+    public boolean guardaCatalogo() {
+        return Persistencia.guardaProductosPersistencia(catalogo);
+    }
+
+    public boolean bajaTrabajador(Trabajador trabajadorBaja) {
+        for (Trabajador t : trabajadores) {
+            if (t.equals(trabajadorBaja)) {
+                Persistencia.eliminaTrabajador(t);
+                trabajadores.remove(t);
+            }
+        }
+        return false;
     }
 }

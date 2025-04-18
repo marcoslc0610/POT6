@@ -37,7 +37,7 @@ public class EnvioTelegram {
         String fijo = "https://api.telegram.org/bot7780416856:AAFf5vqnxNPuL-wYwrLuT4tD2C9PAnG69Zs/sendMessage?chat_id=1423538108&text=";
         try {
             // Codificar el mensaje para que sea válido en una URL
-            String mensajeCodificado = URLEncoder.encode(mensaje, StandardCharsets.UTF_8.toString());
+            String mensajeCodificado = URLEncoder.encode(mensaje, StandardCharsets.UTF_8);
             direccion = fijo + mensajeCodificado; // Metemos el mensaje codificado al final
             URL url = new URL(direccion); // Creando un objeto URL con la dirección de la API de mi bot
             URLConnection con = url.openConnection(); // Realizando la petición GET

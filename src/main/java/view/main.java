@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
+
     public static final Scanner S = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -17,29 +18,194 @@ public class main {
         datosPrueba(controlador);
         do {
             System.out.println("\n");
-            System.out.println("        Bienvenidos a nuestra tienda online");
-            System.out.println("===================================================");
+            //System.out.println("        Bienvenidos a nuestra tienda online");
+            System.out.println("""
+                    ███████╗███████╗██████╗ ███╗   ██╗ █████╗ ███╗   ██╗███████╗██╗  ██╗ ██████╗ ██████╗\s
+                    ██╔════╝██╔════╝██╔══██╗████╗  ██║██╔══██╗████╗  ██║██╔════╝██║  ██║██╔═══██╗██╔══██╗
+                    █████╗  █████╗  ██████╔╝██╔██╗ ██║███████║██╔██╗ ██║███████╗███████║██║   ██║██████╔╝
+                    ██╔══╝  ██╔══╝  ██╔══██╗██║╚██╗██║██╔══██║██║╚██╗██║╚════██║██╔══██║██║   ██║██╔═══╝\s
+                    ██║     ███████╗██║  ██║██║ ╚████║██║  ██║██║ ╚████║███████║██║  ██║╚██████╔╝██║    \s
+                    ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝    \s
+                                                                                                        \s
+                    """);
+            System.out.println("""
+                    █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
+                    ╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝
+                    """);
+            for (Admin a : controlador.getAdmins()) {
+                System.out.println(a);
+            }
             Object user = menuInicio(controlador);
             if (user != null) {
                 menuUsuario(controlador, user);
             }
-
         } while (true);
     }
 
+    private static void datosPrueba(Controlador controlador) {
+        boolean clientesVacios = false, trabajadoresVacios = false, adminsVacios = false, productosVacios = false;
+
+        if (controlador.getClientes().isEmpty()) clientesVacios = true;
+        if (controlador.getTrabajadores().isEmpty()) trabajadoresVacios = true;
+        if (controlador.getAdmins().isEmpty()) adminsVacios = true;
+        if (controlador.getCatalogo().isEmpty()) productosVacios = true;
+
+        if (!clientesVacios || !trabajadoresVacios || !adminsVacios || !productosVacios) {
+            System.out.println("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻");
+            if (!clientesVacios)
+                System.out.println(" - Hay " + controlador.getClientes().size() + " cliente/s ya cargado/s en el sistema");
+            if (!trabajadoresVacios)
+                System.out.println(" - Hay " + controlador.getTrabajadores().size() + " trabajador/es ya cargado/s en el sistema");
+            if (!adminsVacios)
+                System.out.println(" - Hay " + controlador.getAdmins().size() + " admin/s ya cargado/s en el sistema");
+            if (!productosVacios)
+                System.out.println(" - Hay " + controlador.getCatalogo().size() + " producto/s ya cargado/s en el sistema");
+            System.out.println("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻");
+            Utils.pulsaParaContinuar();
+        }
+
+
+        if (clientesVacios) {
+            String respuesta;
+            do {
+                System.out.print("¿Desea agregar datos de CLIENTES de prueba? (S/N): ");
+                respuesta = S.nextLine();
+                if (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"))
+                    System.out.println(" * ERROR DEBE RESPONDER CON S o N");
+            } while (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"));
+            if (respuesta.equalsIgnoreCase("s")) {
+                System.out.println("""
+                        DATOS DE INICIO DE SESION CLIENTES
+                        ==================================================================================
+                        Cliente:
+                            Email:  ahmedlb26205@gmail.com
+                            Nombre: Ahmed
+                            Clave:  123
+                        
+                        Cliente:
+                            Email:  marcos.lara.0610@fernando3martos.com
+                            Nombre: Marcos
+                            Clave:  123
+                        """);
+                controlador.iniciaDatosCliente();
+                Utils.pulsaParaContinuar();
+            }
+        }
+        if (trabajadoresVacios) {
+            String respuesta;
+            do {
+                System.out.print("¿Desea agregar datos de TRABAJADORES de prueba? (S/N): ");
+                respuesta = S.nextLine();
+                if (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"))
+                    System.out.println(" * ERROR DEBE RESPONDER CON S o N");
+            } while (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"));
+            if (respuesta.equalsIgnoreCase("s")) {
+                System.out.println("""
+                        DATOS DE INICIO DE SESION TRABAJADORES
+                        ==================================================================================
+                        Trabajador:
+                            email: ahmed.lhaouchi.2602@fernando3martos.com
+                            clave: 123
+                        
+                        Trabajador:
+                            email: marcoscano2005@gmail.com
+                            clave: 123
+                        """);
+                controlador.iniciaDatosTrabajadores();
+                Utils.pulsaParaContinuar();
+            }
+
+
+        }
+        if (adminsVacios) {
+            String respuesta;
+            do {
+                System.out.print("¿Desea agregar datos de ADMINS de prueba? (S/N): ");
+                respuesta = S.nextLine();
+                if (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"))
+                    System.out.println(" * ERROR DEBE RESPONDER CON S o N");
+            } while (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"));
+            if (respuesta.equalsIgnoreCase("s")) {
+
+                System.out.println("""
+                        DATOS DE INICIO DE SESION ADMIN
+                        ==================================================================================
+                        Admin 1:
+                            email: admin@admin.com
+                            clave: admin
+                        """);
+                controlador.iniciaDatosAdmin();
+                Utils.pulsaParaContinuar();
+            }
+        }
+        if (productosVacios) {
+            String respuesta;
+            do {
+                System.out.print("¿Desea agregar datos de PRODUCTOS de prueba? (S/N): ");
+                respuesta = S.nextLine();
+                if (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"))
+                    System.out.println(" * ERROR DEBE RESPONDER CON S o N");
+            } while (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"));
+            if (respuesta.equalsIgnoreCase("s")) controlador.iniciaDatosCatalogo();
+        }
+
+    }
+
     private static Object menuInicio(Controlador controlador) {
+        Object usuarioLog = null;
+        do {
+            if (!controlador.accesoInvitado()) usuarioLog = menuAccesoNormal(controlador, usuarioLog);
+            else usuarioLog = menuAccesoInvitado(controlador, usuarioLog);
+            Utils.pulsaParaContinuar();
+        } while (usuarioLog == null);
+        return usuarioLog;
+    }
+
+    private static Object menuAccesoNormal(Controlador controlador, Object usuarioLog) {
         int op;
-        System.out.println();
-        System.out.println(" 1. Ver el catálogo");
-        System.out.println(" 2. Registrarse");
-        System.out.println(" 3. Iniciar sesión");
+
         do {
             try {
-                System.out.print(" Marque su opción: ");
+                System.out.println();
+                System.out.println(" 1. - Registrarse");
+                System.out.println(" 2. - Iniciar sesión");
+                System.out.print(" - Marque su opción: ");
                 op = Integer.parseInt(new Scanner(System.in).nextLine());
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("ERROR AL INTRODUCIR UNA OPCIÓN ");
+                System.out.println("\nERROR AL INTRODUCIR UNA OPCIÓN\n");
+            }
+        } while (true);
+
+        switch (op) {
+            case 1: //Registrarse
+                registroCliente(controlador);
+                break;
+            case 2: //Iniciar sesión
+                usuarioLog = login(controlador);
+                if (usuarioLog == null) System.out.println(" * ERROR AL INICIAR SESIÓN");
+                break;
+            default:
+                System.out.println(" * ERROR AL SELECCIONAR LA OPCIÓN");
+                break;
+        }
+        return usuarioLog;
+    }
+
+    private static Object menuAccesoInvitado(Controlador controlador, Object usuarioLog) {
+        int op;
+
+        do {
+            try {
+                System.out.println();
+                System.out.println(" 1. - Ver el catálogo");
+                System.out.println(" 2. - Registrarse");
+                System.out.println(" 3. - Iniciar sesión");
+                System.out.print(" - Marque su opción: ");
+                op = Integer.parseInt(new Scanner(System.in).nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("\nERROR AL INTRODUCIR UNA OPCIÓN\n");
             }
         } while (true);
 
@@ -51,61 +217,28 @@ public class main {
                 registroCliente(controlador);
                 break;
             case 3: //Iniciar sesión
-                login(controlador);
+                usuarioLog = login(controlador);
+                if (usuarioLog == null) System.out.println(" * ERROR AL INICIAR SESIÓN");
+                break;
             default:
+                System.out.println(" * ERROR AL SELECCIONAR LA OPCIÓN");
+                break;
         }
-        return null;
-    }
-
-    private static void datosPrueba(Controlador controlador) {
-        boolean datosIniciados = false;
-
-        System.out.print("¿Quieres iniciar el programa con datos de prueba? (SI/NO): ");
-        String iniciaMockTeclado = S.nextLine();
-
-        if (iniciaMockTeclado.equalsIgnoreCase("si")) {
-            datosIniciados = true;
-            controlador.mock(datosIniciados);
-            System.out.println("""
-                    Iniciando usuarios de prueba...
-                    Cliente:
-                        Email: ahmedlb26205@gmail.com
-                        Nombre: Ahmed
-                        Clave: 123
-                    
-                    Cliente:
-                        Email: marcos.lara.0610@fernando3martos.com
-                        Nombre: Marcos
-                        Clave: 123
-                    
-                    Trabajador:
-                        Email: ahmed.lhaouchi.2602@fernando3martos.com
-                        Nombre: Carlos
-                        Clave: 123
-                    
-                    Trabajador:
-                        Email: marcoscano2005@gmail.com
-                        Nombre: Juan
-                        Clave: 123
-                    """);
-            Utils.pulsaParaContinuar();
-            System.out.println("\n\n\n");
-        } else if (iniciaMockTeclado.equalsIgnoreCase("no")) {
-            System.out.println(" * NO SE AGREGARAN DATOS DE PRUEBA");
-        } else System.out.println(" * ERROR");
-
+        return usuarioLog;
     }
 
     //Metodo login
-    private static void login(Controlador controlador) {
+    private static Object login(Controlador controlador) {
+        Object usuario = null;
+        String emailIntro, claveIntro;
         System.out.print("\n - Introduzca su email: ");
-        String emailIntro = S.nextLine();
+        emailIntro = S.nextLine();
         System.out.print(" - Introduzca su contraseña: ");
-        String claveIntro = S.nextLine();
-        Object usuario = controlador.login(emailIntro, claveIntro);
-
-        if (usuario == null) System.out.println("\nERROR AL INICIAR SESIÓN, VOLVIENDO AL MENÚ PRINCIPAL\n");
-        else menuUsuario(controlador, usuario);
+        claveIntro = S.nextLine();
+        usuario = controlador.login(emailIntro, claveIntro);
+        //if (usuario == null) System.out.println("\nERROR AL INICIAR SESIÓN, VOLVIENDO AL MENÚ PRINCIPAL\n");
+        //else menuUsuario(controlador, usuario);
+        return usuario;
     }
 
     //Metodo para el registro de clientes
@@ -149,9 +282,9 @@ public class main {
         claveIntro = S.nextLine();
 
         if (verificacionCliente(emailIntro)) {
-            if (controlador.registraCliente(emailIntro, claveIntro, nombreIntro, localidadIntro, provinciaIntro, direccionIntro, movilIntro))
+            if (controlador.registraCliente(emailIntro, claveIntro, nombreIntro, localidadIntro, provinciaIntro, direccionIntro, movilIntro)) {
                 System.out.println("\nREGISTRO EXISTOSO\n");
-            else System.out.println("\nERROR: REGISTRO ERRÓNEO\n");
+            } else System.out.println("\nERROR: REGISTRO ERRÓNEO\n");
         }
     }
 
@@ -159,7 +292,7 @@ public class main {
     private static boolean verificacionCliente(String email) {
         int token = Utils.generaTokenRegistro(), tokenIntro;
         System.out.println("\n\nA continuación se le va a enviar un código de verificación a su correo");
-        if (EnvioMail.enviaTokenRegistro(email, token) == true) {
+        if (EnvioMail.enviaTokenRegistro(email, token)) {
             do {
                 try {
                     System.out.print("\nIntroduzca el código recibido: ");
@@ -180,16 +313,16 @@ public class main {
     private static void pintaCatalogo(Controlador controlador) {
         int cont = 0;
         String continuar;
+        if (controlador.getCatalogo().isEmpty()) System.out.println(" * ERROR EL CATÁLOGO ESTÁ VACIO");
         for (Producto p : controlador.getCatalogo()) {
             if (cont == 5) {
-                System.out.print("Pulsa ENTER para continuar o introduzca cualquier tecla para SALIR: ");
+                System.out.print("\nPulsa ENTER para continuar o introduzca cualquier tecla para SALIR: ");
                 continuar = S.nextLine();
                 if (!continuar.isEmpty()) break;
                 //Utils.pulsaParaContinuar();
                 cont = 0;
             }
             System.out.println(p.pintaProductoADetalle());
-            Utils.tiempoEspera(1000);
             cont++;
         }
 
@@ -204,7 +337,8 @@ public class main {
             Cliente cliente = controlador.buscaClienteById(((Cliente) user).getId());
             do {
                 System.out.println();
-                System.out.println("Bienvenido " + cliente.getNombre() + ". Tiene " + controlador.getTotalPedidosPendientesEntregaCliente(cliente) + " pedido/s pendiente/s de entrega.");
+                System.out.println(" - Bienvenido " + cliente.getNombre() + ". Tiene " + controlador.getTotalPedidosPendientesEntregaCliente(cliente) + " pedido/s pendiente/s de entrega.");
+                System.out.println(" - Usted inició sesión por última vez el " + controlador.getUltimoInicioSesion(cliente.getId()));
                 System.out.println("""
                         1. Consultar el catálogo de productos
                         2. Realizar un pedido
@@ -231,7 +365,8 @@ public class main {
             Trabajador trabajadorRegistrado = controlador.buscaTrabajadorByID(((Trabajador) user).getId());
             int opTrabajador;
             do {
-                System.out.println("\n\nBienvenido trabajador " + trabajadorRegistrado.getNombre() + ". Tiene " + trabajadorRegistrado.numPedidosPendientes() + " pedido/s pendiente/s.");
+                System.out.println("\n\n - Bienvenido trabajador " + trabajadorRegistrado.getNombre() + ". Tiene " + trabajadorRegistrado.numPedidosPendientes() + " pedido/s pendiente/s.");
+                System.out.println(" - Usted inició sesión por última vez el " + controlador.getUltimoInicioSesion(trabajadorRegistrado.getId()));
                 System.out.println("""
                         1. Consultar los pedidos que tengo asignados
                         2. Modificar el estado de un pedido
@@ -256,9 +391,13 @@ public class main {
 
         //Pintamos el menu de admin y cogemos la opcion
         if (user instanceof Admin) {
-            //Admin admin = new Admin((Admin) user);
+            Admin admin = null;
+            for (Admin a : controlador.getAdmins()) {
+                if (a.getId() == ((Admin) user).getId()) admin = a;
+            }
             int opAdmin;
             do {
+                System.out.println(" - Usted inició sesión por última vez el " + controlador.getUltimoInicioSesion(admin.getId()));
                 pintaEstadisticasAdmin(controlador);
                 System.out.print("""
                         1. - Ver todo el catálogo
@@ -282,7 +421,7 @@ public class main {
                         System.out.println("ERROR AL INTRODUCIR LA OPCIÓN");
                     }
                 } while (true);
-                menuAdmin(controlador, opAdmin);
+                menuAdmin(controlador, opAdmin, admin);
             } while (opAdmin != 11);
         }
     }
@@ -302,7 +441,7 @@ public class main {
     }
 
     //Metodo que contiene el switch del menu administrador
-    private static void menuAdmin(Controlador controlador, int opAdmin) {
+    private static void menuAdmin(Controlador controlador, int opAdmin, Admin admin) {
         switch (opAdmin) {
             case 1: //Ver todoo el catálogo
                 consultaCatalogo(controlador);
@@ -338,6 +477,11 @@ public class main {
                 asignaPedidoTrabajador(controlador);
                 break;
             case 11:
+                controlador.guardaCierreSesion(admin);
+                controlador.guardaAdmin();
+                controlador.guardaClientes();
+                controlador.guardaCatalogo();
+                controlador.guardaTrabajadores();
                 Utils.mensajeCierraPrograma();
                 break;
         }
@@ -346,9 +490,10 @@ public class main {
     private static void asignaPedidoTrabajador(Controlador controlador) {
         ArrayList<Pedido> pedidosSinAsignar = controlador.pedidosSinTrabajador();
 
-        if (pedidosSinAsignar.isEmpty())
+        if (pedidosSinAsignar.isEmpty()) {
             System.out.println("No se ha realizado ningún pedido o no hay pedidos para asignar...");
-        else if (controlador.getTrabajadores().isEmpty()) System.out.println(" * ERROR NO HAY TRABAJADORES");
+            Utils.pulsaParaContinuar();
+        } else if (controlador.getTrabajadores().isEmpty()) System.out.println(" * ERROR NO HAY TRABAJADORES");
         else {
             Pedido pedidoTemp = null;
             Trabajador trabajadorTemp = null;
@@ -387,6 +532,8 @@ public class main {
             else {
                 if (controlador.asignaPedido(pedidoTemp.getId(), trabajadorTemp.getId())) {
                     System.out.println(" - Pedido asignado a " + trabajadorTemp.getNombre() + " con éxito");
+                    controlador.guardaTrabajadores();
+                    controlador.guardaCatalogo();
                     EnvioTelegram.enviaMensajeTrabajadorPedidoAsignado(trabajadorTemp, pedidoTemp);
 
                     PedidoClienteDataClass dataTemp = null;
@@ -447,10 +594,12 @@ public class main {
                     opcion = S.nextLine();
 
                     if (opcion.equalsIgnoreCase("si")) {
-                        if (t.numPedidosPendientes() == 0 && controlador.getTrabajadores().remove(t)) {
+                        if (t.numPedidosPendientes() == 0) {
+                            controlador.bajaTrabajador(t);
                             System.out.println(" - Trabajador dado de baja correctamente");
                             Utils.pulsaParaContinuar();
-                        } else System.out.println(" * ERROR NO SE HA DADO DE BAJA AL TRABAJADOR");
+                        } else
+                            System.out.println(" * ERROR NO SE HA DADO DE BAJA AL TRABAJADOR POR TENER PEDIDOS PENDIENTES"); //TODO REVISAR
                     } else if (opcion.equalsIgnoreCase("no")) {
                         System.out.println(" * CANCELANDO BAJA DEL TRABAJADOR");
                         Utils.pulsaParaContinuar();
@@ -501,6 +650,7 @@ public class main {
             if (tokenIntro.equalsIgnoreCase(String.valueOf(token))) {
                 if (controlador.nuevoTrabajador(email, clave, nombre, movilIntro)) {
                     System.out.println(" - TRABAJADOR DADO DE ALTA CORRECTAMENTE");
+                    controlador.guardaTrabajadores();
                 } else System.out.println(" * ERROR NO SE HA PODIDO DAR DE ALTA AL TRABAJADOR");
             }
         } else System.out.println(" * ERROR AL VERIFICAR EMAIL, TRABAJADOR NO DADO DE ALTA");
@@ -657,6 +807,7 @@ public class main {
                     break;
             }
         } while (op != 3);
+        controlador.guardaCatalogo();
     }
 
     //Metodo que modifica el comentario de un pedido (menu admin)
@@ -696,7 +847,7 @@ public class main {
         PedidoClienteDataClass p = pedidosCopia.get(numPedido);
         System.out.println(p);
         Utils.pulsaParaContinuar();
-        System.out.print("Introduzca el comentario a añadir: ");
+        System.out.print("\nIntroduzca el comentario a añadir: ");
         String comentarioNuevo = S.nextLine();
         p.setComentario(comentarioNuevo);
 
@@ -895,6 +1046,7 @@ public class main {
                 if (op == 6) Utils.mensajeCierraPrograma();
             } while (op != 6);
         }
+        Utils.mensajeGuardadoPersistencia(controlador.guardaCatalogo());
     }
 
     //Metodo que pinta todos los pedidos terminados/completados de un trabajador
@@ -973,6 +1125,7 @@ public class main {
                         System.out.println(" - SU CLAVE HA SIDO CAMBIADA CON ÉXITO: " + claveNueva);
                     }
                 }
+                controlador.guardaTrabajadores();
             }
             if (opcion == 1 || opcion == 4) { //EMAIL
                 System.out.print("Introduzca nuevo email: ");
@@ -1059,6 +1212,7 @@ public class main {
                     break;
             }
         } while (op != 3);
+        Utils.mensajeGuardadoPersistencia(controlador.guardaCatalogo());
     }
 
     //Metodo que se encarga de modificar el comentario de un pedido asignado a un trabajador
@@ -1236,6 +1390,11 @@ public class main {
                 modificaDatosCliente(controlador, cliente);
                 break;
             case 6: //Salir
+                controlador.guardaCierreSesion(cliente);
+                controlador.guardaAdmin();
+                controlador.guardaClientes();
+                controlador.guardaCatalogo();
+                controlador.guardaTrabajadores();
                 Utils.mensajeCierraPrograma();
                 break;
         }
@@ -1273,7 +1432,7 @@ public class main {
                     Utils.pulsaParaContinuar();
                     break;
                 case 3: //Eliminar un producto del carro
-                    eliminaProducto(cliente);
+                    eliminaProducto(cliente, controlador);
                     Utils.pulsaParaContinuar();
                     break;
                 case 4: //Confirmar el pedido
@@ -1285,6 +1444,8 @@ public class main {
                     Utils.pulsaParaContinuar();
                     break;
                 case 6: //Salir
+                    controlador.guardaClientes();
+                    controlador.guardaTrabajadores();
                     Utils.mensajeCierraPrograma();
                     break;
             }
@@ -1300,14 +1461,16 @@ public class main {
         else {
             Pedido temp = seleccionaPedidoCliente(controlador, cliente);
 
-            if (temp == null) System.out.println(" * ERROR NO HAY PEDIDOS PARA CANCELAR");
+            if (temp == null) System.out.println(" * ERROR NINGUN PEDIDO CANCELADO");
             else {
                 System.out.println("¿Deseas cancelar el pedido? (SI/NO)");
                 String cancelaPedido = S.nextLine();
 
                 if (cancelaPedido.equalsIgnoreCase("si")) {
-                    if (controlador.cancelaPedidoCliente(cliente.getId(), temp.getId()))
+                    if (controlador.cancelaPedidoCliente(cliente.getId(), temp.getId())) {
                         System.out.println(" - El pedido ha sido cancelado con éxito");
+                        controlador.guardaClientes();
+                    }
                 } else if (cancelaPedido.equalsIgnoreCase("no")) {
                     System.out.println(" * ERROR SE HA CANCELADO EL PROCESO");
                 }
@@ -1346,7 +1509,7 @@ public class main {
         }
         do {
             try {
-                System.out.print("Introduce el pedido: ");
+                System.out.print("Introduce el pedido (-1 para salir): ");
                 pedidoSeleccionado = Integer.parseInt(S.nextLine());
                 break;
             } catch (NumberFormatException e) {
@@ -1354,17 +1517,21 @@ public class main {
             }
         } while (true);
 
-        Pedido pedidoElegido = null;
+        if (pedidoSeleccionado > 0) {
+            Pedido pedidoElegido = null;
 
-        try {
-            pedidoElegido = pedidos.get(pedidoSeleccionado - 1);
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(" * ERROR AL ELEGIR EL PEDIDO");
+            try {
+                pedidoElegido = pedidos.get(pedidoSeleccionado - 1);
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println(" * ERROR AL ELEGIR EL PEDIDO");
+            }
+
+            if (pedidoElegido == null) return null;
+
+            return controlador.buscaPedidoById(pedidoElegido.getId());
         }
-
-        if (pedidoElegido == null) return null;
-
-        return controlador.buscaPedidoById(pedidoElegido.getId());
+        if (pedidoSeleccionado == -1) Utils.mensajeCierraPrograma();
+        return null;
     }
 
     private static void confirmaPedido(Controlador controlador, Cliente cliente) {
@@ -1374,14 +1541,18 @@ public class main {
             System.out.print("¿Quieres confirmar el pedido? (SI/NO): ");
             String confirmaPedido = S.nextLine();
             if (confirmaPedido.equalsIgnoreCase("si")) {
-                if (controlador.confirmaPedidoCliente(cliente.getId()))
+                if (controlador.confirmaPedidoCliente(cliente.getId())) {
                     System.out.println(" - El pedido se ha confirmado con éxito");
+                    controlador.guardaClientes();
+                    controlador.guardaTrabajadores();
+                }
+
             } else System.out.println(" * ERROR LA CONFIRMACION DEL PEDIDO SE HA CANCELADO");
         }
     }
 
     //Metodo para eliminar un producto del carro de un cliente
-    private static void eliminaProducto(Cliente cliente) {
+    private static void eliminaProducto(Cliente cliente, Controlador controlador) {
 
         int posProducto;
         if (cliente.numProductosCarro() == 0) System.out.println("\n * ERROR EL CARRO ESTÁ VACIO");
@@ -1404,8 +1575,11 @@ public class main {
 
             if (temp == null) System.out.println(" * ERROR NO SE HA ENCONTRADO NINGÚN PRODUCTO");
             else {
-                if (cliente.quitaProductoCarro(temp.getId())) System.out.println(" - Producto eliminado correctamente");
-                else System.out.println(" * ERROR AL ELIMINAR EL PRODUCTO DEL CARRO");
+                if (cliente.quitaProductoCarro(temp.getId())) {
+                    controlador.guardaClientes();
+                    System.out.println(" - Producto eliminado correctamente");
+
+                } else System.out.println(" * ERROR AL ELIMINAR EL PRODUCTO DEL CARRO");
             }
         }
 
@@ -1468,6 +1642,7 @@ public class main {
         } while (temp == null);
 
         if (temp != null && controlador.addProductoCarrito(cliente, temp.getId())) {
+            controlador.guardaClientes();
             System.out.println(" - El producto se ha añadido al carrito correctamente");
         } else System.out.println(" * ERROR NO SE HA PODIDO AGREGAR AL CARRITO EL PRODUCTO");
 
@@ -1475,15 +1650,18 @@ public class main {
 
     //Metodo que pinta los datos personales de un cliente que le pasemos
     private static void pintaDatosPersonalesCliente(Cliente cliente) {
-        System.out.println("╭───────────────────────────────────────────────────────────────────────╮");
+        System.out.println("╭──────────────────────────────────────────────────────────────────────────────────────────────────╮");
         System.out.println("""
-                                ╔╦╗┌─┐┌┬┐┌─┐┌─┐  ╔═╗┌─┐┬─┐┌─┐┌─┐┌┐┌┌─┐┬  ┌─┐┌─┐
-                                 ║║├─┤ │ │ │└─┐  ╠═╝├┤ ├┬┘└─┐│ ││││├─┤│  ├┤ └─┐
-                                ═╩╝┴ ┴ ┴ └─┘└─┘  ╩  └─┘┴└─└─┘└─┘┘└┘┴ ┴┴─┘└─┘└─┘
+                                    ____        _                                                    _          \s
+                                   |  _ \\  __ _| |_ ___  ___   _ __   ___ _ __ ___  ___  _ __   __ _| | ___  ___\s
+                                   | | | |/ _` | __/ _ \\/ __| | '_ \\ / _ \\ '__/ __|/ _ \\| '_ \\ / _` | |/ _ \\/ __|
+                                   | |_| | (_| | || (_) \\__ \\ | |_) |  __/ |  \\__ \\ (_) | | | | (_| | |  __/\\__ \\
+                                   |____/ \\__,_|\\__\\___/|___/ | .__/ \\___|_|  |___/\\___/|_| |_|\\__,_|_|\\___||___/
+                                                              |_|                                               \s
                                            \s
                 """);
         System.out.println(cliente);
-        System.out.println("╰───────────────────────────────────────────────────────────────────────╯");
+        System.out.println("╰──────────────────────────────────────────────────────────────────────────────────────────────────╯");
     }
 
     //Metodo que nos indica varias maneras de consultar el catálogo siendo cliente
@@ -1643,6 +1821,7 @@ public class main {
             }
             if (opcion == 9) Utils.mensajeCierraPrograma();
         } while (opcion != 9);
+        controlador.guardaClientes();
     }
 
     //Metodo que se encarga de pintar los pedidos hechos por el cliente
@@ -1730,11 +1909,6 @@ public class main {
     public static void pintaListaProductos(ArrayList<Producto> productos) {
         for (Producto p : productos) {
             if (p != null) System.out.println(p.pintaProductoADetalle());
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -1743,11 +1917,6 @@ public class main {
         String listaProductos = "";
         for (Producto p : productos) {
             if (p != null) listaProductos += p;
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
         return listaProductos;
     }

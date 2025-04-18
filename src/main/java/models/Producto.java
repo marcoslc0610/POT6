@@ -86,6 +86,8 @@ public class Producto implements Serializable {
     }
 
     //Otros métodos
+
+
     @Override
     public String toString() {
         return "- " + marca + " " + modelo +
@@ -105,7 +107,7 @@ public class Producto implements Serializable {
                     " Marca:  " + marca + "\n" +
                     " Modelo: " + modelo + "\n" +
                     " Descripción: " + descripcion + "\n" + "\n" +
-                    "                                               Precio: " + precio + "€" + "\n" +
+                    "                                               Precio: " + precio + " euros" + "\n" +
                     "|---------------------------------------------------------------------|";
         }
         return
@@ -115,8 +117,7 @@ public class Producto implements Serializable {
                         " Marca:  " + marca + "\n" +
                         " Modelo: " + modelo + "\n" +
                         " Descripción: " + descripcion + "\n" + "\n" +
-                        "                                               Precio: " + precio + "€" + "\n" +
+                        "                                               Precio: " + precio + " euros" + "\n" +
                         "|---------------------------------------------------------------------|";
     }
-
 }

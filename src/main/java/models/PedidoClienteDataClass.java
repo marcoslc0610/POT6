@@ -1,9 +1,10 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class PedidoClienteDataClass {
+public class PedidoClienteDataClass implements Serializable {
 
     private int idCliente;
     private String email;
