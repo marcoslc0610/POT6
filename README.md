@@ -12,27 +12,52 @@ Práctica Obligatoria Tema 6 by Ahmed Lhaouchi Briki y Marcos Lara Cano
 
   ## Presentación
 
-Esta es la practica obligatoria del tema 5 de programación, que consiste en un programa llamado fernanshop, una tienda virtual.
+Este proyecto corresponde a la Práctica Obligatoria del Tema 6 de la asignatura de Programación. Consiste en el desarrollo de FernanShop, una aplicación que simula el funcionamiento de una tienda virtual, permitiendo la gestión de pedidos, productos, clientes y trabajadores.
 
   ## Instalación
 
-Para poder ejecutar el programa, debemos instalar el **JDK 23**. [Haz clic aquí para descargarlo directamente en tu ordenador](https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.exe) El programa comenzará a descargarse automáticamente y deberá ejecutar el instalador.
+Para poder ejecutar el programa, debemos instalar el **JDK 23**. [Haz clic aquí para descargarlo directamente en tu ordenador](https://download.oracle.com/java/24/latest/jdk-24_windows-x64_bin.exe) El programa comenzará a descargarse automáticamente y deberá ejecutar el instalador.
 
 # Iniciar
-Descargamos mediante el enlace a GitHub el archivo .zip.
+Descargamos mediante el enlace a GitHub el archivo ".zip" .
+
+![Captura de pantalla 2025-04-20 224253](https://github.com/user-attachments/assets/aeffd688-47fc-4101-9705-918bd1f00c2e)
+
 Descomprimimos el archivo y abrimos la carpeta que se genera.
-Entramos en la carpeta POT5O\out\artifacts\POT5O_jar, y pulsamos sobre el ejecutable llamado "EJECUTABLE.bat". El programa comenzará a funcionar.
+
+![Captura de pantalla 2025-04-20 225114](https://github.com/user-attachments/assets/aa016b8c-f765-43f6-9d37-9619095a36bf)
+
+Entramos en la carpeta "out\artifacts\POT6_jar" , y pulsamos sobre el EJECUTABLE llamado "EJECUTABLE.bat". El programa comenzará a funcionar.
+
+![image](https://github.com/user-attachments/assets/8da1ca24-d62c-4e6e-b9b1-b26101d0fea4)
 
 # Ejecución
-Al iniciar el ejecutable nos saldrá una opción de agregar datos de prueba que consiste en 2 clientes y 2 trabajadores. El usuario elige si agregarlos o no:
 
-![Captura de pantalla 2025-03-24 084725](https://github.com/user-attachments/assets/f835c630-392d-4386-87c8-723ae901cb90)
+Al iniciar el programa nos preguntará el programa si deseamos añadir datos de prueba:
+
+![image](https://github.com/user-attachments/assets/18242d42-d0e7-4284-8e0c-95b8abc513cc)
+
+![image](https://github.com/user-attachments/assets/7b304875-9940-4167-ba6d-afbfc7cc3ff7)
+
+![image](https://github.com/user-attachments/assets/d5b33b47-e91d-4a77-9d06-b2239a1af805)
+
+![image](https://github.com/user-attachments/assets/1a6738f2-57d1-4d3f-b160-9484189d003b)
+
+Este proceso solo deberemos pasar por él la primera ejecución del programa, al cerrar y volver a ejecutarlo solamente nos informará de los datos que hay guardados:
+
+![image](https://github.com/user-attachments/assets/1fd48801-e638-4bab-a164-2b2d4d83ed94)
 
 
-Al iniciar el programa nos saldrá 3 opciones, que al pulsar la opción 1, nos mostrará todos los productos del catálogo
+Al iniciar el menu principal nos saldrán 3 opciones:
 
-![Captura de pantalla 2025-03-23 132057](https://github.com/user-attachments/assets/b4eb2f18-8612-4e7f-bd45-fce48a7a1a07)
+![image](https://github.com/user-attachments/assets/eb6b49bb-4521-4bd9-8ba8-75fcfdf1d56b)
 
+La opción 1 nos muestra el catálogo de productos disponibles:
+
+
+![image](https://github.com/user-attachments/assets/6c5478e1-24a0-4bbe-908a-aca94a403b0e)
+
+Los productos cargan de 5 en 5, podemos seguir visualizando pulsando ENTER o en cambio podemos escribir cualquier cosa para salir y volver al menú principal.
 
 En la opción 2, podremos hacer un registro, con un código de verificación enviado al correo
 
@@ -42,24 +67,30 @@ Aquí esta el correo que se nos manda con el código de verificación
 ![4c92bf7c-288f-4e27-9356-00f6ea236212](https://github.com/user-attachments/assets/a0d23f78-47cb-44fc-91d4-ba3c5a34140f)
 
 En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador o cliente
+
+![image](https://github.com/user-attachments/assets/a83e15b2-dab3-466b-bca7-e3da24455cf6)
+
+
   ## Administrador
   Una vez iniciada la sesion como administrador...
   
-  Aquí podremos administrar todo el programa desde un menú
+  Aquí podremos administrar todo el programa desde un menú.
+
+  En la cabecera se nos indica la última vez que iniciamos sesion con este perfil, ademas de ciertas estadísticas sobre el programa como el numero de clientes, trabajadores, pedidos. Incluso nos especifica los pedidos pendientes, completados/cancelados y sin asignar.
   
-  ![Captura de pantalla 2025-03-23 150717](https://github.com/user-attachments/assets/1b968d6c-66c1-4f52-b6f9-14e19f4a19d6)
+![image](https://github.com/user-attachments/assets/6aee1bd9-35cf-40ec-80af-70128d1b178e)
 
   ### Opción 1
  
-  En la opción 1 podremos ver  el catálogo buscandolo de todas las formas posibles
+  En la primera opción podremos visualizar el catálogo de productos, incluso buscando productos por marca, modelo, descripción, término o por rango de precios.
 
-  ![5f14b351-87be-4ac1-a7de-e791e1b190a4](https://github.com/user-attachments/assets/8e9b1278-6c8d-4e6f-af0a-d2796520e465)
+  ![image](https://github.com/user-attachments/assets/e3ab247a-7208-464f-9644-1bd13a7207a2)
 
   ### Opción 2
 
-  En la opción 2 introduciremos el id del producto y podremos modificar todo cuanto queramos
+  En la opción 2 introduciremos el id del producto y podremos modificar todo cuanto queramos.
 
-  ![49ba1c77-2f6c-4e3e-ae12-411a6d3c0599](https://github.com/user-attachments/assets/60bc0992-39be-49f1-80f1-15ddb9795087)
+  ![image](https://github.com/user-attachments/assets/0723f8e5-4b82-465d-8042-7ee0f5a87133)
 
   ### Opción 3
 
@@ -86,7 +117,7 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
   ### Opción 7
 
-  En esta opción se podrá modificar o bien el estado de un pedido o el comentario de dicho pedido
+  En esta opción se podrá modificar o bien el estado de un pedido o el comentario de dicho pedido. Se le enviará un correo al cliente avisando del cambio.
   
   ![1dd7912b-fd70-4d1e-a2f0-6edadf4f4581](https://github.com/user-attachments/assets/cedeb9da-336d-458c-91d3-8966fd94ff2c)
 
@@ -116,6 +147,32 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
   ![b39cc548-7111-4020-a520-4d79f1ec4b79](https://github.com/user-attachments/assets/bf686952-90b4-421c-8254-ce2f237832fe)
 
+ ### Opción 11
+Con esta opcion podremos ver los ajustes que tenemos configurados en el archivo properties:
+
+![image](https://github.com/user-attachments/assets/34e3da81-8122-4266-a8b7-6b4fdd97fec3)
+
+ ### Opción 12
+Con esta opcion podremos enviar al correo que indiquemos un excel con todos los pedidos realizados en nuestro programa:
+
+![image](https://github.com/user-attachments/assets/9d113266-ed42-4fcd-9870-b43cb2a9ec42)
+
+![image](https://github.com/user-attachments/assets/54983d99-0214-45d7-b39d-4899f3c98cbe)
+
+ ### Opción 13
+Con esta opcion podremos realizar o recuperar una copia de seguridad al software FernanShop:
+
+Al realizar la copia de seguridad podemos elegir si guardarla en una ruta por defecto o indicar nosotros una ruta:
+
+Ruta por defecto:
+
+![image](https://github.com/user-attachments/assets/2a08fdfa-d1b0-488b-b0f1-9a620fcc2c81)
+
+Indicando nosotros la ruta:
+![image](https://github.com/user-attachments/assets/d1644b71-7fdf-4475-822b-df3574bcd69a)
+
+Y al recuperar el backup es de igual forma.
+
   ## Trabajador
 
   Este es el menú trabajador
@@ -130,21 +187,21 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
   ### Opción 2
 
-  Aquí al igual que en el administrador, se le puede modificar tanto el estado como el comentario del pedido que se elija
+  En esta opción se podrá modificar o bien el estado de un pedido o el comentario de dicho pedido. Se le enviará un correo al cliente avisando del cambio.
   
-  ![f13d08b2-bf1c-4ebf-8f4c-4c0bf555e922](https://github.com/user-attachments/assets/4b49f7f9-12e4-4bea-9992-76ef252236ca)
+  ![1dd7912b-fd70-4d1e-a2f0-6edadf4f4581](https://github.com/user-attachments/assets/cedeb9da-336d-458c-91d3-8966fd94ff2c)
 
   ### Opción 3
 
-  Vista de todo el catálogo, o bien la búsqueda de cualquier producto a traves de su nombre, marca...
-    
-  ![ab55812a-bd49-4fed-9f3f-da72a35c7d8d](https://github.com/user-attachments/assets/ee1ceb6b-b3f8-405d-948e-337b8cf9067e)
+  En la primera opción podremos visualizar el catálogo de productos, incluso buscando productos por marca, modelo, descripción, término o por rango de precios.
+
+  ![image](https://github.com/user-attachments/assets/e3ab247a-7208-464f-9644-1bd13a7207a2)
 
   ### Opción 4
 
-  La opción de poder modificar un pedido, la marca, modelo...
-  
-  ![503cccad-9dca-45c2-959b-b442acc0b27b](https://github.com/user-attachments/assets/85921058-210a-475f-b0fd-536813780e29)
+  En la opción 2 introduciremos el id del producto y podremos modificar todo cuanto queramos.
+
+  ![image](https://github.com/user-attachments/assets/0723f8e5-4b82-465d-8042-7ee0f5a87133)
 
   ### Opción 5
 
@@ -160,7 +217,7 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
   ### Opción 7
 
-  Opción para cambiar alguna información de tu perfil
+  Opción para cambiar alguna información de tu usuario
   
   ![f99b1f4c-26fe-423a-b802-a005484b2236](https://github.com/user-attachments/assets/f5a9477f-62ac-4762-9ec5-a3686d119a87)
 
@@ -170,8 +227,7 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
   ### Opción 1
 
-  Aquí al igual que en el administrador, se le puede modificar tanto el estado como el comentario del pedido que se elija
-
+  En la primera opción podremos visualizar el catálogo de productos, incluso buscando productos por marca, modelo, descripción, término o por rango de precios.
 
   ![Captura de pantalla 2025-03-23 133017](https://github.com/user-attachments/assets/b7a62828-db7d-41d4-a6a1-2362658e11dc)
   
@@ -211,7 +267,7 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
  ![130fd595-8227-4284-a150-ae012c996f1c](https://github.com/user-attachments/assets/51356e33-62a3-4504-9e6b-0942edeb6529)
 
- Un log que guardara todas las acciones que se hacen en nuestro programa
+ Un log que guardara todas las acciones que se realicen en nuestro programa
 
  ![54a6f856-ae58-44ca-93f7-f28288de84ea](https://github.com/user-attachments/assets/a5adc2ef-33cf-4bb4-a6d6-5eb0ea8ed613)
 
