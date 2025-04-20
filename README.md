@@ -62,17 +62,15 @@ En el menú principal encontramos tres opciones principales:
 
 ### Opción 1: Catálogo de productos
 
-Se muestra una lista de productos disponible para la venta:
+Se muestra una lista de productos disponibles para la venta, donde se puede ver el nombre, precio, categoría, stock y otros detalles. El catálogo está dividido en páginas, y puedes presionar **ENTER** para cargar más productos o escribir cualquier otra cosa para volver al menú principal.
 
 ![image](https://github.com/user-attachments/assets/6c5478e1-24a0-4bbe-908a-aca94a403b0e)
-
-Los productos se cargan de cinco en cinco. Podemos presionar **ENTER** para ver más o escribir cualquier otra cosa para volver al menú principal.
 
 ---
 
 ### Opción 2: Registro de usuario
 
-Permite registrar un nuevo usuario con verificación por correo electrónico.
+Permite registrar un nuevo usuario que será validado mediante un correo electrónico. Se ingresa el nombre, correo y contraseña. El sistema enviará un código de verificación al correo para completar el proceso de registro.
 
 ![Captura de pantalla 2025-03-23 132630](https://github.com/user-attachments/assets/9e2a2740-9d8b-485e-814a-9d26a485388a)
 
@@ -84,7 +82,7 @@ Correo recibido con el código de verificación:
 
 ### Opción 3: Iniciar sesión
 
-Se puede acceder como **administrador**, **trabajador** o **cliente**.
+Permite iniciar sesión como **administrador**, **trabajador** o **cliente**, dependiendo de los permisos asignados al usuario.
 
 ![image](https://github.com/user-attachments/assets/a83e15b2-dab3-466b-bca7-e3da24455cf6)
 
@@ -92,74 +90,86 @@ Se puede acceder como **administrador**, **trabajador** o **cliente**.
 
 ## Administrador
 
-Una vez dentro, tenemos acceso completo a todas las funcionalidades del programa.  
-Se muestra la fecha del último inicio de sesión, estadísticas generales y un menú con múltiples opciones.
+Como **administrador**, tendrás acceso completo a todas las funcionalidades del sistema, permitiéndote gestionar los productos, clientes, pedidos y trabajadores.
 
-![image](https://github.com/user-attachments/assets/6aee1bd9-35cf-40ec-80af-70128d1b178e)
+### Opción 1: Catálogo de productos
 
-### Opción 1: Catálogo de productos  
-Permite visualizar y buscar productos por distintos criterios.
+Permite visualizar y buscar productos en el sistema por distintos criterios como nombre, categoría, stock y precio.
 
 ![image](https://github.com/user-attachments/assets/e3ab247a-7208-464f-9644-1bd13a7207a2)
 
-### Opción 2: Modificar producto  
-Editar cualquier campo de un producto a partir de su ID.
+### Opción 2: Modificar producto
+
+Te permite modificar cualquier campo de un producto a partir de su ID (por ejemplo, nombre, precio, descripción, stock, etc.).
 
 ![image](https://github.com/user-attachments/assets/0723f8e5-4b82-465d-8042-7ee0f5a87133)
 
-### Opción 3: Ver clientes  
-Consulta de todos los clientes registrados.
+### Opción 3: Ver clientes
+
+Consulta de todos los clientes registrados en la tienda, donde puedes ver sus datos personales y estado de cuenta.
 
 ![a9ec6a79-5d1c-4a78-9d72-e8bf5008e67b](https://github.com/user-attachments/assets/387ce823-066a-4cf1-a027-72d7e85852d6)
 
-### Opción 4: Ver pedidos  
-Listado y gestión de pedidos.
+### Opción 4: Ver pedidos
+
+Consulta los pedidos realizados, su estado y detalles relacionados con la compra.
 
 ![3108bd9f-3951-445b-ac8e-b126f470b558](https://github.com/user-attachments/assets/080d8ef9-b85f-429c-9e46-a9df646ed764)
 
-### Opción 5: Ver trabajadores  
-Visualización de los datos de trabajadores.
+### Opción 5: Ver trabajadores
+
+Consulta de todos los trabajadores registrados en el sistema, incluyendo sus detalles y su estado de empleo.
 
 ![b912b662-de8b-4dd2-9441-9bced733150e](https://github.com/user-attachments/assets/5c205ac3-2931-49d1-b82c-5bd868a824be)
 
-### Opción 6: Ver estadísticas  
-Resumen completo de actividad.
+### Opción 6: Ver estadísticas
+
+Accede a un resumen de estadísticas generales del sistema, como el número de pedidos realizados, productos vendidos y estadísticas de clientes.
 
 ![7af1b7c6-5436-4e80-944f-1c00151cf233](https://github.com/user-attachments/assets/ad64abca-ed5a-4fbc-9935-6a5e7e1149fe)
 
-### Opción 7: Modificar estado/comentario pedido  
-Actualiza pedidos y notifica al cliente por correo.
+### Opción 7: Modificar estado/comentario pedido
+
+Puedes modificar el estado de un pedido o añadir un comentario relacionado. También notificas a los clientes por correo electrónico sobre cualquier cambio.
 
 ![1dd7912b-fd70-4d1e-a2f0-6edadf4f4581](https://github.com/user-attachments/assets/cedeb9da-336d-458c-91d3-8966fd94ff2c)
 
 ### Opción 8: Alta de trabajador
 
+Permite agregar nuevos trabajadores al sistema con sus datos correspondientes.
+
 ![e75168d2-226a-417f-b9d1-3f4c2cf223e2](https://github.com/user-attachments/assets/b586c61f-3c06-4878-a399-55f33f8c50ce)
 
 ### Opción 9: Baja de trabajador
 
+Permite dar de baja a un trabajador del sistema, removiendo sus datos del sistema.
+
 ![0a7e3ee5-3e7c-4013-b335-5ca0fe520b8a](https://github.com/user-attachments/assets/3d076dd3-8c5a-41f1-a823-25cff91160f2)
 
-### Opción 10: Asignar pedidos  
-Asignación con notificación por correo y Telegram.
+### Opción 10: Asignar pedidos
+
+Permite asignar un pedido a un trabajador específico, con notificación a través de correo y Telegram.
 
 ![972b945b-5e6b-4c05-a829-473755af3ece](https://github.com/user-attachments/assets/43ae847f-9512-49f8-b494-cd237f6d5f46)  
 ![c73f8d9d-6c49-4704-aff4-5b23540ebd73](https://github.com/user-attachments/assets/cbe096cd-ccdf-4f46-8b17-e448c5fbeb0c)  
 ![b39cc548-7111-4020-a520-4d79f1ec4b79](https://github.com/user-attachments/assets/bf686952-90b4-421c-8254-ce2f237832fe)
 
-### Opción 11: Ver configuración  
-Lectura del archivo `.properties`.
+### Opción 11: Ver configuración
+
+Muestra los archivos de configuración del sistema, como el archivo `.properties`, donde se almacenan parámetros configurables como correo y ajustes de base de datos.
 
 ![image](https://github.com/user-attachments/assets/34e3da81-8122-4266-a8b7-6b4fdd97fec3)
 
-### Opción 12: Enviar resumen por correo  
-Envía un Excel con todos los pedidos registrados.
+### Opción 12: Enviar resumen por correo
+
+Permite enviar un resumen de todos los pedidos registrados en el sistema a través de correo electrónico en formato Excel.
 
 ![image](https://github.com/user-attachments/assets/9d113266-ed42-4fcd-9870-b43cb2a9ec42)  
 ![image](https://github.com/user-attachments/assets/54983d99-0214-45d7-b39d-4899f3c98cbe)
 
-### Opción 13: Copia de seguridad  
-Crear y restaurar backups, con posibilidad de elegir ruta.
+### Opción 13: Copia de seguridad
+
+Permite crear y restaurar copias de seguridad, con la posibilidad de elegir la ruta de almacenamiento.
 
 ![image](https://github.com/user-attachments/assets/2a08fdfa-d1b0-488b-b0f1-9a620fcc2c81)  
 ![image](https://github.com/user-attachments/assets/d1644b71-7fdf-4475-822b-df3574bcd69a)
@@ -168,34 +178,43 @@ Crear y restaurar backups, con posibilidad de elegir ruta.
 
 ## Trabajador
 
-Menú específico para trabajadores:
-
-![37517d35-47b2-4990-87eb-a26ed1390690](https://github.com/user-attachments/assets/47d61ba8-92de-4641-8e0f-76cd6560b744)
+El trabajador tiene acceso solo a las opciones relacionadas con la gestión de pedidos y productos.
 
 ### Opción 1: Consultar pedidos pendientes
+
+Muestra los pedidos pendientes de ser procesados o enviados.
 
 ![5b09f259-5775-4380-8423-558c58691a78](https://github.com/user-attachments/assets/5e9f90b6-f4d5-426c-a248-e72fc3d311e0)
 
 ### Opción 2: Modificar pedido
 
+Permite cambiar detalles de un pedido como el estado y añadir comentarios.
+
 ![1dd7912b-fd70-4d1e-a2f0-6edadf4f4581](https://github.com/user-attachments/assets/cedeb9da-336d-458c-91d3-8966fd94ff2c)
 
-### Opción 3: Ver catálogo  
-Igual que en el menú administrador.
+### Opción 3: Ver catálogo
 
-### Opción 4: Editar producto  
-Si tiene permisos, puede editar productos también.
+Accede al catálogo de productos de la tienda, igual que en el menú administrador.
 
-### Opción 5: Ver historial  
-Pedidos terminados.
+### Opción 4: Editar producto
+
+Si tiene permisos, también podrá modificar productos del catálogo.
+
+### Opción 5: Ver historial
+
+Consulta de los pedidos terminados y su estado final.
 
 ![704ced2b-fb36-491b-abf7-812818cb0e70](https://github.com/user-attachments/assets/7a63f614-9e50-4308-b713-0363d1bd4c02)
 
 ### Opción 6: Ver perfil
 
+Permite ver los datos personales del trabajador.
+
 ![4ab0d386-99f4-437b-92b2-1cc1a52ac7da](https://github.com/user-attachments/assets/c58464b4-dbd5-4a9d-8777-5cf0e8e05374)
 
 ### Opción 7: Editar perfil
+
+El trabajador podrá modificar su perfil con cambios de datos personales.
 
 ![f99b1f4c-26fe-423a-b802-a005484b2236](https://github.com/user-attachments/assets/f5a9477f-62ac-4762-9ec5-a3686d119a87)
 
@@ -203,26 +222,36 @@ Pedidos terminados.
 
 ## Cliente
 
-![Captura de pantalla 2025-03-23 132819](https://github.com/user-attachments/assets/9e2ac485-a989-4708-8d4a-011c135b0bce)
+El cliente puede realizar compras, ver su historial de pedidos y actualizar sus datos personales.
 
 ### Opción 1: Ver productos
+
+Permite al cliente consultar los productos disponibles en la tienda.
 
 ![Captura de pantalla 2025-03-23 133017](https://github.com/user-attachments/assets/b7a62828-db7d-41d4-a6a1-2362658e11dc)
 
 ### Opción 2: Realizar pedido
+
+Permite al cliente realizar un pedido seleccionando productos del catálogo y pasando por el proceso de compra.
 
 ![Captura de pantalla 2025-03-23 150004](https://github.com/user-attachments/assets/a66c2865-32b7-45b0-a899-580c322b0f8e)  
 ![Captura de pantalla 2025-03-23 150201](https://github.com/user-attachments/assets/ae50f4e2-5a81-423f-973b-60227a12a9c3)
 
 ### Opción 3: Ver historial
 
+Muestra los pedidos realizados por el cliente en el pasado y su estado.
+
 ![74d4415c-69de-4b26-a72e-62ea2f312921](https://github.com/user-attachments/assets/efbd2ce6-a3ec-46f9-af3e-6e0ca1112b82)
 
 ### Opción 4: Datos personales
 
+Muestra los datos personales del cliente.
+
 ![a7fc8b36-db61-41e8-8d91-4ddedd31c65f](https://github.com/user-attachments/assets/d92daeda-38ea-4f7f-b79d-c2ab27fa4302)
 
 ### Opción 5: Editar perfil
+
+Permite al cliente modificar sus datos personales.
 
 ![874e9033-0017-4c9c-b7e6-b9d6415383b0](https://github.com/user-attachments/assets/ef2bbe5c-878d-4f93-8e4e-855e754d11b1)
 
@@ -232,19 +261,19 @@ Pedidos terminados.
 
 ### Persistencia de datos
 
-- Carga automática de clientes, trabajadores y administrador por defecto.
+El sistema mantiene los datos de los usuarios, productos, pedidos y trabajadores a través de ficheros, garantizando que la información persista incluso después de cerrar la aplicación.
 
 ![130fd595-8227-4284-a150-ae012c996f1c](https://github.com/user-attachments/assets/51356e33-62a3-4504-9e6b-0942edeb6529)
 
-- Generación de logs con las acciones del sistema.
+- **Generación de logs**: Se registran las acciones importantes realizadas en el sistema para un seguimiento detallado.
 
 ![54a6f856-ae58-44ca-93f7-f28288de84ea](https://github.com/user-attachments/assets/a5adc2ef-33cf-4bb4-a6d6-5eb0ea8ed613)
 
-- Archivo de propiedades con configuración de entorno.
+- **Archivo de propiedades**: Configura parámetros como el correo de notificación y ajustes de la base de datos.
 
 ![ac5b4853-5c0a-47f3-b1af-3f2bd68ec221](https://github.com/user-attachments/assets/7b01436c-ff4f-4336-bc29-0d3665b91b8b)
 
-- Confirmación de pedidos por correo:
+- **Confirmación de pedidos por correo**: Cuando un pedido es realizado, se envía un correo al cliente con los detalles.
 
 ![b9b680d1-6262-4858-a623-08c58c925f71](https://github.com/user-attachments/assets/f461e078-b60c-4fc9-ac7f-e8874ff9fe55)  
-![a64b2c97-858a-41f8-ac3a-185cfd6662f6](https://github.com/user-attachments/assets/a49ac111-0e7d-4679-9592-561e278e9e50)
+![a64b2c
