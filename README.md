@@ -206,4 +206,21 @@ En la opción 3, podremos iniciar sesión, ya sea como administrador, trabajador
 
  ## Nuevas implementaciones
 
- Persistencia
+ ### Persistencia
+ Hemos implementado la cargar de clientes, trabajadores y el admin de prueba para poder probar con dichos usuarios que a su vez se guardan en carpetas
+
+ ![130fd595-8227-4284-a150-ae012c996f1c](https://github.com/user-attachments/assets/51356e33-62a3-4504-9e6b-0942edeb6529)
+
+ Un log que guardara todas las acciones que se hacen en nuestro programa
+
+ ![54a6f856-ae58-44ca-93f7-f28288de84ea](https://github.com/user-attachments/assets/a5adc2ef-33cf-4bb4-a6d6-5eb0ea8ed613)
+
+ Un properties en el que se guarda la configuracion del programa 
+
+ ![ac5b4853-5c0a-47f3-b1af-3f2bd68ec221](https://github.com/user-attachments/assets/7b01436c-ff4f-4336-bc29-0d3665b91b8b)
+
+También, al recibir el correo con la informacion del pedido 
+
+![b9b680d1-6262-4858-a623-08c58c925f71](https://github.com/user-attachments/assets/f461e078-b60c-4fc9-ac7f-e8874ff9fe55)
+
+![a64b2c97-858a-41f8-ac3a-185cfd6662f6](https://github.com/user-attachments/assets/a49ac111-0e7d-4679-9592-561e278e9e50)
