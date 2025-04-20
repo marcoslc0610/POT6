@@ -273,7 +273,11 @@ El sistema mantiene los datos de los usuarios, productos, pedidos y trabajadores
 
 ![ac5b4853-5c0a-47f3-b1af-3f2bd68ec221](https://github.com/user-attachments/assets/7b01436c-ff4f-4336-bc29-0d3665b91b8b)
 
-- **Confirmación de pedidos por correo**: Cuando un pedido es realizado, se envía un correo al cliente con los detalles.
+- **Confirmación de pedidos por correo**: Cuando un pedido es realizado, se envía un correo al cliente con los detalles en formato pdf.
 
 ![b9b680d1-6262-4858-a623-08c58c925f71](https://github.com/user-attachments/assets/f461e078-b60c-4fc9-ac7f-e8874ff9fe55)  
-![a64b2c
+
+- **Se muestra la hora de ultimo inicio de sesión de un usuario**: Cuando un usuario inicia sesión en la cabecera de su menú se le muestra fecha y hora de su ultimo inicio de sesión:
+
+![image](https://github.com/user-attachments/assets/412b8e61-3d12-4713-aae0-0b56eae25cda)
+
